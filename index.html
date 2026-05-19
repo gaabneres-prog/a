@@ -41,7 +41,9 @@ body{
   background:#0b0b10;
   color:white;
 
-  overflow:hidden;
+  padding:20px;
+
+  overflow-x:hidden;
 }
 
 /* FUNDO */
@@ -53,7 +55,7 @@ body{
   background:
   radial-gradient(circle at top left,#7c3aed55,transparent 35%),
   radial-gradient(circle at bottom right,#06b6d455,transparent 35%),
-  linear-gradient(180deg,#0b0b10,#111827);
+  linear-gradient(180deg,#050510,#111827);
 
   z-index:-1;
 }
@@ -87,29 +89,26 @@ body{
 
 .profile{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:34px;
 }
 
-/* AVATAR */
+/* FOTO PERFIL */
 
 .avatar{
-  width:92px;
-  height:92px;
+  width:125px;
+  height:125px;
 
   margin:auto;
 
   border-radius:50%;
 
-  background:linear-gradient(135deg,#7c3aed,#06b6d4);
+  object-fit:cover;
 
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  border:3px solid rgba(124,58,237,0.8);
 
-  font-size:36px;
-  font-weight:600;
-
-  box-shadow:0 0 25px rgba(124,58,237,0.4);
+  box-shadow:
+  0 0 25px rgba(124,58,237,0.45),
+  0 0 60px rgba(6,182,212,0.15);
 
   animation:float 4s ease-in-out infinite;
 }
@@ -133,15 +132,19 @@ body{
 /* TEXTO PERFIL */
 
 .profile h1{
-  font-size:36px;
-  margin-top:12px;
-  font-weight:600;
+  font-size:42px;
+  margin-top:14px;
+  font-weight:700;
+
+  letter-spacing:-1px;
 }
 
 .profile p{
   color:#b8b8b8;
-  font-size:14px;
+  font-size:15px;
   font-weight:300;
+
+  margin-top:2px;
 }
 
 /* CARDS */
@@ -156,7 +159,7 @@ body{
   padding:16px 18px;
   margin-bottom:14px;
 
-  border-radius:18px;
+  border-radius:20px;
 
   background:rgba(255,255,255,0.06);
 
@@ -246,15 +249,6 @@ body{
   color:white;
 }
 
-/* TIKTOK */
-
-.tiktok{
-  background:#0f0f0f;
-
-  box-shadow:
-  0 0 15px rgba(255,255,255,0.08);
-}
-
 /* LIVEPIX */
 
 .livepix{
@@ -290,12 +284,41 @@ body{
 
 @media(max-width:480px){
 
+  body{
+    align-items:flex-start;
+    padding-top:40px;
+    padding-bottom:40px;
+  }
+
+  .container{
+    width:100%;
+  }
+
   .profile h1{
-    font-size:30px;
+    font-size:34px;
+  }
+
+  .profile p{
+    font-size:13px;
+  }
+
+  .avatar{
+    width:105px;
+    height:105px;
   }
 
   .card{
-    padding:15px 16px;
+    padding:14px;
+    border-radius:18px;
+  }
+
+  .icon-box{
+    width:52px;
+    height:52px;
+  }
+
+  .icon{
+    font-size:22px;
   }
 
   .card span{
@@ -319,34 +342,22 @@ body{
     <!-- PERFIL -->
     <div class="profile">
 
-      <div class="avatar">
-        N
-      </div>
+      <!-- FOTO -->
+      <img src="sua-foto.jpg" class="avatar">
 
       <h1>Neres</h1>
 
-      <p>criador de conteúdo ✨</p>
+      <p>vire apoiador e faça parte disso ✨</p>
 
     </div>
 
-    <!-- TIKTOK -->
-    <a class="card" href="SEU_LINK_TIKTOK" target="_blank">
-
-      <div class="icon-box tiktok">
-        <i class="fa-brands fa-tiktok icon"></i>
-      </div>
-
-      <span>Último vídeo</span>
-
-    </a>
-
     <!-- LIVEPIX -->
-    <a class="card" href="SEU_LINK_LIVEPIX" target="_blank">
+    <a class="card" href="https://livepix.gg/nereeszx" target="_blank">
 
       <div class="icon-box livepix">
 
-        <!-- COLOQUE A IMAGEM livepix.png NA MESMA PASTA -->
-        <img src="https://play-lh.googleusercontent.com/HAN8nvHpwAAb8kPdPzEqm_xNpDbvbOBMcnGM3rL2WtCKsGspAptxj5K9pIHungHEYn5s" class="livepix-img">
+        <img src="https://play-lh.googleusercontent.com/HAN8nvHpwAAb8kPdPzEqm_xNpDbvbOBMcnGM3rL2WtCKsGspAptxj5K9pIHungHEYn5s"
+        class="livepix-img">
 
       </div>
 
@@ -355,7 +366,7 @@ body{
     </a>
 
     <!-- DISCORD -->
-    <a class="card" href="SEU_LINK_DISCORD" target="_blank">
+    <a class="card" href="https://discord.gg/CfrFFPE6" target="_blank">
 
       <div class="icon-box discord">
         <i class="fa-brands fa-discord icon"></i>
@@ -367,8 +378,7 @@ body{
 
     <!-- PARCERIAS -->
     <a class="card"
-    href="mailto:contatonereeszx@gmail.com?subject=Parceria%20e%20Divulgação&body=Olá%20Neres,%20vim%20pelo%20seu%20site!"
-    >
+    href="mailto:contatonereeszx@gmail.com?subject=Parceria%20e%20Divulgação&body=Olá%20Neres,%20vim%20pelo%20seu%20site!">
 
       <div class="icon-box parceria">
         <i class="fa-solid fa-handshake icon"></i>

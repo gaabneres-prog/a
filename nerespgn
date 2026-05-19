@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Neres</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* BODY */
+
+body{
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:#0b0b10;
+  color:white;
+
+  overflow:hidden;
+}
+
+/* FUNDO */
+
+.bg{
+  position:fixed;
+  inset:0;
+
+  background:
+  radial-gradient(circle at top left,#7c3aed55,transparent 35%),
+  radial-gradient(circle at bottom right,#06b6d455,transparent 35%),
+  linear-gradient(180deg,#0b0b10,#111827);
+
+  z-index:-1;
+}
+
+/* CONTAINER */
+
+.container{
+  width:92%;
+  max-width:420px;
+
+  z-index:2;
+
+  animation:fade 0.8s ease;
+}
+
+@keyframes fade{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* PERFIL */
+
+.profile{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+/* AVATAR */
+
+.avatar{
+  width:92px;
+  height:92px;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  background:linear-gradient(135deg,#7c3aed,#06b6d4);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:36px;
+  font-weight:600;
+
+  box-shadow:0 0 25px rgba(124,58,237,0.4);
+
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* TEXTO PERFIL */
+
+.profile h1{
+  font-size:36px;
+  margin-top:12px;
+  font-weight:600;
+}
+
+.profile p{
+  color:#b8b8b8;
+  font-size:14px;
+  font-weight:300;
+}
+
+/* CARDS */
+
+.card{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  padding:16px 18px;
+  margin-bottom:14px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
+  text-decoration:none;
+  color:white;
+
+  overflow:hidden;
+
+  transition:0.25s ease;
+}
+
+/* HOVER */
+
+.card:hover{
+  transform:translateY(-4px) scale(1.02);
+
+  background:rgba(255,255,255,0.10);
+
+  border:1px solid rgba(124,58,237,0.5);
+
+  box-shadow:
+  0 0 25px rgba(124,58,237,0.25);
+}
+
+/* BRILHO */
+
+.card::before{
+  content:"";
+
+  position:absolute;
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100%;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+
+  transition:0.7s;
+}
+
+.card:hover::before{
+  left:100%;
+}
+
+/* SETA */
+
+.card::after{
+  content:"↗";
+
+  margin-left:auto;
+
+  font-size:18px;
+
+  opacity:0.7;
+}
+
+/* QUADRADO DOS ÍCONES */
+
+.icon-box{
+  width:58px;
+  height:58px;
+
+  border-radius:16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+}
+
+/* ÍCONES */
+
+.icon{
+  font-size:26px;
+  color:white;
+}
+
+/* TIKTOK */
+
+.tiktok{
+  background:#0f0f0f;
+
+  box-shadow:
+  0 0 15px rgba(255,255,255,0.08);
+}
+
+/* LIVEPIX */
+
+.livepix{
+  background:white;
+}
+
+.livepix-img{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+}
+
+/* DISCORD */
+
+.discord{
+  background:#5865F2;
+}
+
+/* PARCERIAS */
+
+.parceria{
+  background:linear-gradient(135deg,#ffcc00,#ff7b00);
+}
+
+/* TEXTO */
+
+.card span{
+  font-size:15px;
+  font-weight:500;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:480px){
+
+  .profile h1{
+    font-size:30px;
+  }
+
+  .card{
+    padding:15px 16px;
+  }
+
+  .card span{
+    font-size:14px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- FUNDO -->
+  <div class="bg"></div>
+
+  <!-- CONTAINER -->
+  <div class="container">
+
+    <!-- PERFIL -->
+    <div class="profile">
+
+      <div class="avatar">
+        N
+      </div>
+
+      <h1>Neres</h1>
+
+      <p>criador de conteúdo ✨</p>
+
+    </div>
+
+    <!-- TIKTOK -->
+    <a class="card" href="SEU_LINK_TIKTOK" target="_blank">
+
+      <div class="icon-box tiktok">
+        <i class="fa-brands fa-tiktok icon"></i>
+      </div>
+
+      <span>Último vídeo</span>
+
+    </a>
+
+    <!-- LIVEPIX -->
+    <a class="card" href="SEU_LINK_LIVEPIX" target="_blank">
+
+      <div class="icon-box livepix">
+
+        <!-- COLOQUE A IMAGEM livepix.png NA MESMA PASTA -->
+        <img src="https://play-lh.googleusercontent.com/HAN8nvHpwAAb8kPdPzEqm_xNpDbvbOBMcnGM3rL2WtCKsGspAptxj5K9pIHungHEYn5s" class="livepix-img">
+
+      </div>
+
+      <span>LivePix</span>
+
+    </a>
+
+    <!-- DISCORD -->
+    <a class="card" href="SEU_LINK_DISCORD" target="_blank">
+
+      <div class="icon-box discord">
+        <i class="fa-brands fa-discord icon"></i>
+      </div>
+
+      <span>Discord</span>
+
+    </a>
+
+    <!-- PARCERIAS -->
+    <a class="card"
+    href="mailto:contatonereeszx@gmail.com?subject=Parceria%20e%20Divulgação&body=Olá%20Neres,%20vim%20pelo%20seu%20site!"
+    >
+
+      <div class="icon-box parceria">
+        <i class="fa-solid fa-handshake icon"></i>
+      </div>
+
+      <span>Parcerias & Divulgações</span>
+
+    </a>
+
+  </div>
+
+</body>
+</html>

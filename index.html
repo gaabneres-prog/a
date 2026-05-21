@@ -3,335 +3,236 @@
 
 <head>
 
-  <meta charset="UTF-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neres</title>
 
-  <title>Neres</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- COMPATIBILIDADE TIKTOK -->
-  <meta http-equiv="Content-Security-Policy"
-  content="default-src * 'self' data: blob: 'unsafe-inline' 'unsafe-eval';">
-
-  <meta name="referrer" content="no-referrer">
-
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 
 /* RESET */
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
-
-/* BODY */
 
 body{
-  min-height:100vh;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  background:#0b0b10;
-  color:white;
-
-  padding:20px;
-
-  overflow-x:hidden;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#050510;
+color:white;
+padding:20px;
+overflow:hidden;
 }
 
-/* FUNDO */
-
+/* FUNDO GALAXY SUAVE */
 .bg{
-  position:fixed;
-  inset:0;
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top left,#7c3aed55,transparent 40%),
+radial-gradient(circle at bottom right,#06b6d455,transparent 40%),
+radial-gradient(circle at center,#0f172a,transparent 70%);
+z-index:-2;
+}
 
-  background:
-  radial-gradient(circle at top left,#7c3aed55,transparent 35%),
-  radial-gradient(circle at bottom right,#06b6d455,transparent 35%),
-  linear-gradient(180deg,#050510,#111827);
+/* PARTICULAS */
+.bg::after{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background-image:radial-gradient(white 1px, transparent 1px);
+background-size:35px 35px;
+opacity:0.05;
+animation:move 25s linear infinite;
+}
 
-  z-index:-1;
+@keyframes move{
+from{transform:translate(0,0);}
+to{transform:translate(-120px,-120px);}
 }
 
 /* CONTAINER */
-
 .container{
-  width:92%;
-  max-width:420px;
-
-  z-index:2;
-
-  animation:fade 0.8s ease;
+width:92%;
+max-width:440px;
+z-index:2;
+animation:fade 0.9s ease;
 }
 
 @keyframes fade{
-
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+from{opacity:0;transform:translateY(25px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 /* PERFIL */
-
 .profile{
-  text-align:center;
-  margin-bottom:34px;
+text-align:center;
+margin-bottom:34px;
 }
 
-/* FOTO PERFIL */
-
+/* AVATAR NEON */
 .avatar{
-  width:125px;
-  height:125px;
-
-  margin:auto;
-
-  border-radius:50%;
-
-  object-fit:cover;
-
-  border:3px solid rgba(124,58,237,0.8);
-
-  box-shadow:
-  0 0 25px rgba(124,58,237,0.45),
-  0 0 60px rgba(6,182,212,0.15);
-
-  animation:float 4s ease-in-out infinite;
+width:125px;
+height:125px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid rgba(124,58,237,0.9);
+box-shadow:
+0 0 20px rgba(124,58,237,0.7),
+0 0 50px rgba(6,182,212,0.25),
+0 0 80px rgba(124,58,237,0.15);
+animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
-
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-8px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
-
-}
-
-/* TEXTO PERFIL */
-
-.profile h1{
-  font-size:42px;
-  margin-top:14px;
-  font-weight:700;
-
-  letter-spacing:-1px;
-}
-
-.profile p{
-  color:#b8b8b8;
-  font-size:15px;
-  font-weight:300;
-
-  margin-top:2px;
-}
-
-/* CARDS */
-
-.card{
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  gap:16px;
-
-  padding:16px 18px;
-  margin-bottom:14px;
-
-  border-radius:20px;
-
-  background:rgba(255,255,255,0.06);
-
-  border:1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-
-  text-decoration:none;
-  color:white;
-
-  overflow:hidden;
-
-  transition:0.25s ease;
-}
-
-/* HOVER */
-
-.card:hover{
-  transform:translateY(-4px) scale(1.02);
-
-  background:rgba(255,255,255,0.10);
-
-  border:1px solid rgba(124,58,237,0.5);
-
-  box-shadow:
-  0 0 25px rgba(124,58,237,0.25);
-}
-
-/* BRILHO */
-
-.card::before{
-  content:"";
-
-  position:absolute;
-  top:0;
-  left:-100%;
-
-  width:100%;
-  height:100%;
-
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.08),
-    transparent
-  );
-
-  transition:0.7s;
-}
-
-.card:hover::before{
-  left:100%;
-}
-
-/* SETA */
-
-.card::after{
-  content:"↗";
-
-  margin-left:auto;
-
-  font-size:18px;
-
-  opacity:0.7;
-}
-
-/* QUADRADO DOS ÍCONES */
-
-.icon-box{
-  width:58px;
-  height:58px;
-
-  border-radius:16px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  flex-shrink:0;
-}
-
-/* ÍCONES */
-
-.icon{
-  font-size:26px;
-  color:white;
-}
-
-/* LIVEPIX */
-
-.livepix{
-  background:white;
-}
-
-.livepix-img{
-  width:34px;
-  height:34px;
-  object-fit:contain;
-}
-
-/* DISCORD */
-
-.discord{
-  background:#5865F2;
-}
-
-/* PARCERIAS */
-
-.parceria{
-  background:linear-gradient(135deg,#ffcc00,#ff7b00);
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 }
 
 /* TEXTO */
+.profile h1{
+font-size:42px;
+font-weight:700;
+margin-top:14px;
+letter-spacing:-1px;
+}
 
-.card span{
-  font-size:15px;
-  font-weight:500;
+.profile p{
+color:#b8b8b8;
+font-size:15px;
+}
+
+/* CARDS PREMIUM */
+.card{
+position:relative;
+display:flex;
+align-items:center;
+gap:16px;
+padding:16px 18px;
+margin-bottom:14px;
+border-radius:18px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(16px);
+text-decoration:none;
+color:white;
+overflow:hidden;
+transition:0.25s ease;
+}
+
+/* HOVER NEON FORTE */
+.card:hover{
+transform:translateY(-5px) scale(1.03);
+background:rgba(255,255,255,0.12);
+border:1px solid rgba(124,58,237,0.8);
+box-shadow:
+0 0 15px rgba(124,58,237,0.5),
+0 0 35px rgba(6,182,212,0.25);
+}
+
+/* LUZ ANIMADA */
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);
+transition:0.7s;
+}
+
+.card:hover::before{
+left:100%;
+}
+
+/* SETA */
+.card::after{
+content:"↗";
+margin-left:auto;
+font-size:18px;
+opacity:0.7;
+}
+
+/* ICONS */
+.icon-box{
+width:58px;
+height:58px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+}
+
+.icon{
+font-size:26px;
+color:white;
+}
+
+/* CORES */
+.livepix{background:white;}
+.discord{background:#5865F2;}
+.parceria{background:linear-gradient(135deg,#ffcc00,#ff7b00);}
+
+.livepix-img{
+width:34px;
+height:34px;
+object-fit:contain;
 }
 
 /* RESPONSIVO */
-
 @media(max-width:480px){
 
-  body{
-    align-items:flex-start;
-    padding-top:40px;
-    padding-bottom:40px;
-  }
+body{
+align-items:flex-start;
+padding-top:40px;
+padding-bottom:40px;
+}
 
-  .container{
-    width:100%;
-  }
+.container{
+width:100%;
+}
 
-  .profile h1{
-    font-size:34px;
-  }
+.profile h1{
+font-size:34px;
+}
 
-  .profile p{
-    font-size:13px;
-  }
+.profile p{
+font-size:13px;
+}
 
-  .avatar{
-    width:105px;
-    height:105px;
-  }
+.avatar{
+width:105px;
+height:105px;
+}
 
-  .card{
-    padding:14px;
-    border-radius:18px;
-  }
+.card{
+padding:14px;
+border-radius:16px;
+}
 
-  .icon-box{
-    width:52px;
-    height:52px;
-  }
+.icon-box{
+width:52px;
+height:52px;
+}
 
-  .icon{
-    font-size:22px;
-  }
-
-  .card span{
-    font-size:14px;
-  }
+.icon{
+font-size:22px;
+}
 
 }
 
@@ -341,70 +242,41 @@ body{
 
 <body>
 
-  <!-- FUNDO -->
-  <div class="bg"></div>
+<div class="bg"></div>
 
-  <!-- CONTAINER -->
-  <div class="container">
+<div class="container">
 
-    <!-- PERFIL -->
-    <div class="profile">
+<div class="profile">
+<img src="sua-foto.jpg" class="avatar">
+<h1>neres</h1>
+<p>vire apoiador e faça parte disso ✨</p>
+</div>
 
-      <!-- FOTO -->
-      <img src="sua-foto.jpg.jpeg" class="avatar">
+<!-- LIVEPIX -->
+<a class="card" href="https://livepix.gg/nereeszx" target="_blank">
+<div class="icon-box livepix">
+<img class="livepix-img" src="https://play-lh.googleusercontent.com/HAN8nvHpwAAb8kPdPzEqm_xNpDbvbOBMcnGM3rL2WtCKsGspAptxj5K9pIHungHEYn5s">
+</div>
+<span>LivePix</span>
+</a>
 
-      <h1>neres</h1>
+<!-- DISCORD -->
+<a class="card" href="https://discord.gg/CfrFFPE6" target="_blank">
+<div class="icon-box discord">
+<i class="fa-brands fa-discord icon"></i>
+</div>
+<span>Discord</span>
+</a>
 
-      <p>vire apoiador e faça parte disso ✨</p>
+<!-- PARCERIAS -->
+<a class="card" href="mailto:contatonereeszx@gmail.com?subject=Parceria%20e%20Divulgação" target="_blank">
+<div class="icon-box parceria">
+<i class="fa-solid fa-handshake icon"></i>
+</div>
+<span>Parcerias & Divulgações</span>
+</a>
 
-    </div>
-
-    <!-- LIVEPIX -->
-    <a class="card"
-    href="https://www.livepix.gg/nereeszx"
-    target="_blank"
-    rel="noopener noreferrer">
-
-      <div class="icon-box livepix">
-
-        <img src="https://play-lh.googleusercontent.com/HAN8nvHpwAAb8kPdPzEqm_xNpDbvbOBMcnGM3rL2WtCKsGspAptxj5K9pIHungHEYn5s"
-        class="livepix-img">
-
-      </div>
-
-      <span>LivePix</span>
-
-    </a>
-
-    <!-- DISCORD -->
-    <a class="card"
-    href="https://www.discord.com/invite/CfrFFPE6"
-    target="_blank"
-    rel="noopener noreferrer">
-
-      <div class="icon-box discord">
-        <i class="fa-brands fa-discord icon"></i>
-      </div>
-
-      <span>Discord</span>
-
-    </a>
-
-    <!-- PARCERIAS -->
-    <a class="card"
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=contatonereeszx@gmail.com&su=Parceria%20e%20Divulgação&body=Olá%20Neres,%20vim%20pelo%20seu%20TikTok!"
-    target="_blank"
-    rel="noopener noreferrer">
-
-      <div class="icon-box parceria">
-        <i class="fa-solid fa-handshake icon"></i>
-      </div>
-
-      <span>Parcerias & Divulgações</span>
-
-    </a>
-
-  </div>
+</div>
 
 </body>
 </html>
